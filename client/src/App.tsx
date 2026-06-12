@@ -18,11 +18,15 @@ function Router() {
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
+/**
+ * App - Composant racine
+ * Design: Moderne Chaleureux - Thème light par défaut
+ * 
+ * Configuration :
+ * - Thème: light (fond blanc cassé, texte gris chaud)
+ * - Palette: Terracotta accent (#C17A6B)
+ * - Typographie: Lora (serif) + Inter (sans-serif)
+ */
 function App() {
   return (
     <ErrorBoundary>

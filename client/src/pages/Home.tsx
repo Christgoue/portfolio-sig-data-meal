@@ -1,25 +1,39 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Home - Page principale du portfolio
+ * Design: Moderne Chaleureux - Assemblage de tous les composants
+ * 
+ * Structure :
+ * 1. Header (navigation)
+ * 2. Hero (introduction)
+ * 3. Expertise (3 piliers)
+ * 4. Portfolio (projets)
+ * 5. About (à propos)
+ * 6. Footer (pied de page)
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
 
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Expertise from "@/components/Expertise";
+import Portfolio from "@/components/Portfolio";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
+
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+    <div className="min-h-screen flex flex-col bg-background">
+      {/* Header sticky */}
+      <Header />
+
+      {/* Contenu principal */}
+      <main className="flex-1">
+        <Hero />
+        <Expertise />
+        <Portfolio />
+        <About />
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
