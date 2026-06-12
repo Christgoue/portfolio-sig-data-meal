@@ -2,46 +2,17 @@
  * Portfolio - Section des projets réalisés
  * Design: Moderne Chaleureux - Cartes de projets avec images
  * 
- * Affiche une galerie de projets avec descriptions et liens
- * Structure simple pour faciliter l'ajout de nouveaux projets
+ * Utilise la configuration centralisée depuis data/projects.ts
+ * Affiche une galerie de projets avec descriptions et liens cliquables
+ * 
+ * COMMENT AJOUTER UN PROJET :
+ * 1. Modifiez client/src/data/projects.ts
+ * 2. Ajoutez un nouvel objet au tableau 'projects'
+ * 3. Le projet apparaît automatiquement ici !
  */
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  image: string;
-  tags: string[];
-  link?: string;
-}
-
-const projects: Project[] = [
-  {
-    id: "gis-analysis",
-    title: "Analyse Cartographique Régionale",
-    description: "Création d'une analyse SIG complète pour visualiser les patterns géographiques et les tendances spatiales.",
-    category: "Cartographie SIG",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744840844/HwJfuQSJRo4cbFdPtKuPKP/gis-mapping-section-5FHECKdFFnwLnfYi2e6sow.webp",
-    tags: ["QGIS", "PostGIS", "Analyse Spatiale"],
-  },
-  {
-    id: "data-dashboard",
-    title: "Tableau de Bord Analytics",
-    description: "Dashboard interactif pour le suivi de KPIs et la visualisation de données métier en temps réel.",
-    category: "Analyse Data",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744840844/HwJfuQSJRo4cbFdPtKuPKP/data-analytics-section-cEmQDSMNd7XTowBFfwzfdT.webp",
-    tags: ["Tableau", "SQL", "Business Intelligence"],
-  },
-  {
-    id: "geospatial-viz",
-    title: "Visualisation Géospatiale Interactive",
-    description: "Création d'une application web interactive pour explorer des données géographiques complexes.",
-    category: "Visualisation",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744840844/HwJfuQSJRo4cbFdPtKuPKP/hero-gis-data-VVUghCecvT9HRHU8STArbj.webp",
-    tags: ["Mapbox", "React", "D3.js"],
-  },
-];
+import { projects } from "@/data/projects";
+import { ExternalLink } from "lucide-react";
 
 export default function Portfolio() {
   return (
@@ -88,7 +59,7 @@ export default function Portfolio() {
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
@@ -99,13 +70,16 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                {/* Lien */}
+                {/* Lien vers le projet */}
                 {project.link && (
                   <a
                     href={project.link}
-                    className="inline-flex text-accent font-medium hover:text-accent/80 transition-colors link-underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
                   >
-                    Voir le projet →
+                    {project.linkLabel || "Voir le projet"}
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 )}
               </div>
