@@ -16,11 +16,10 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-0 animate-pulse"
         style={{
-          backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663744840844/HwJfuQSJRo4cbFdPtKuPKP/hero-gis-data-animated-9sTKtUX85tHQNj84XCWChH.webp)',
+          backgroundImage: 'url(/manus-storage/hero-gis-data-animated_e4e73e7b.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          animation: 'subtle-zoom 20s ease-in-out infinite',
         }}
       >
         {/* Overlay gradient pour lisibilité du texte */}

@@ -20,7 +20,7 @@ export default function About() {
           <div className="flex justify-center md:justify-start">
             <div className="relative w-full max-w-sm">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744840844/HwJfuQSJRo4cbFdPtKuPKP/profile-photo-styled.png"
+                src="/manus-storage/profile-photo-styled_84fc264f.png"
                 alt="Christian Gouesse"
                 className="w-full h-auto rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
