@@ -15,6 +15,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Expertise from "@/components/Expertise";
 import Portfolio from "@/components/Portfolio";
+import Skills from "@/components/Skills";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function Home() {
         <Hero />
         <Expertise />
         <Portfolio />
+        <Skills />
         <About />
       </main>
 

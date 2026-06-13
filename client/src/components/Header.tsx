@@ -29,6 +29,9 @@ export default function Header() {
           <a href="#portfolio" className="text-sm text-muted-foreground hover:text-foreground link-underline">
             Portfolio
           </a>
+          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground link-underline">
+            Compétences
+          </a>
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground link-underline">
             À propos
           </a>
